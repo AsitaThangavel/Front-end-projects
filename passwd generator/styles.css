@@ -1,0 +1,85 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif ;
+}
+
+body{
+    background-color:rgb(22, 22, 23) ;
+    height: 100vh;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.outer h2{
+    color: black;
+    font-size: 40px;
+    font-weight: 100;
+    /* padding-top: 15px; */
+
+}
+
+.outer{
+    background-color: white;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 700px;
+    border-radius: 20px;
+    row-gap: 20px;
+    padding: 20px 20px 35px 20px;
+}
+.inp{
+    background-color: black;
+    height: 45px;
+    width: 400px;
+    border-radius: 15px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+
+}
+.inp input{
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.inp img{
+    height: 20px;
+    cursor: pointer;
+    padding-left: 92px;
+}
+
+.outer button{
+    background-color: rgb(12, 130, 61);
+    height: 45px;
+    width: 400px;
+    border-radius: 15px;
+    color: white;
+    font-size: 25px;
+    top: 50%;
+    text-align: left;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.outer button>img{
+    height: 20px;
+    padding-top: 5px;
+    padding-bottom: auto;
+    padding-right: 5px;
+    
+}
+.outer button:hover{
+    border: 3px solid black;
+}

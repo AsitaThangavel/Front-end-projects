@@ -1,0 +1,43 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: cursive;
+    box-sizing: border-box;
+}
+
+body{
+    background:#111d33;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.inside{
+    padding: 10px;
+    display: flex;
+    align-items:left;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    
+}
+#message{
+    padding:10px;
+    color: #eb8a44;
+    display: none;
+}
+
+#pass{
+    height: 50px;
+    width: 350px;
+    border-radius: 20px;
+    border: 3px solid white;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 15px;   
+}
+

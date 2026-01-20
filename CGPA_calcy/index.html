@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>CGPA Calcy</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    
+    <body>
+        <div class="block"> 
+            <h2>Asi's GPA Calcy</h2>
+
+            <div class="input_get">
+                
+                
+            </div>
+
+            <div class="btn">
+                <button type="submit" onclick="res()">Result</button>
+                <button onclick="get_value()">ADD</button>
+            </div>
+            <p id="gpa_res"></p>
+            <p id="quote"></p>
+
+        </div>
+        
+        <script>
+            let input_get=document.getElementsByClassName("input_get")[0];
+            let tc=0;
+            let subgrade=0;
+            let c=0;
+            let g=0;
+
+            function get_value(){
+                let d1=document.createElement("div");
+                let inp1=document.createElement("input");
+                let inp2=document.createElement("input");
+                inp1.placeholder = "Credit";
+                inp1.type="number";
+                inp2.placeholder = "Grade";
+                inp2.type="number";
+                d1.classList.add("input-row");
+                d1.appendChild(inp1);
+                d1.appendChild(inp2);
+                input_get.appendChild(d1);
+
+                inp1.addEventListener("input", calculate);
+                inp2.addEventListener("input", calculate);
+                
+            }
+
+            function calculate() {
+                let rows = document.querySelectorAll('.input-row');
+                let tc = 0;
+                let subgrade = 0; 
+                rows.forEach(row => {
+                    let credit = parseFloat(row.children[0].value) || 0; 
+                    let grade = parseFloat(row.children[1].value) || 0;  
+                    tc += credit;
+                    subgrade += credit * grade; 
+                });
+                window.totalCredits = tc;
+                window.totalSubgrade = subgrade;
+            }
+
+
+
+            function res() {
+                if (window.totalCredits === 0 || isNaN(window.totalCredits)) {
+                    alert("No credits entered. Cannot calculate GPA.");
+                    return;
+                }
+
+                let r = window.totalSubgrade / window.totalCredits; 
+                console.log(`GPA: ${r.toFixed(2)}`);
+                document.getElementById("gpa_res").innerHTML=(`GPA: ${r.toFixed(2)}🙄`);
+                document.getElementById("quote").innerHTML=(`but in the hell of the real world, it means nothing.😏`);
+
+
+            }
+
+
+
+        </script>
+    </body>
+
+</html>

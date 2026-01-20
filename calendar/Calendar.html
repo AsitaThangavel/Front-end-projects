@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Calendar</title>
+        <link rel="stylesheet" href="./calendar.css">
+    </head>
+    <body>
+        <div class="backgr">
+            <div class="cal">
+                <div class="left">
+                    <p id="date">0</p>
+                    <p id="day">fri</p>
+                </div>
+                <div class="right">
+                    <p id="mont">dec</p>
+                    <p id="year">2024</p>
+                </div>
+                
+
+            </div>
+            <div class="tex">
+                <P>Days fade away but the progress you make will last forever</P>
+            </div>
+        </div>
+        <script>
+            const date=document.getElementById("date");
+            const day=document.getElementById("day");
+            const mont=document.getElementById("mont");
+            const year=document.getElementById("year");
+// Date() is a default function, try console.log(today);
+            
+            const today=new Date();
+            const weeekday=["Sunday","Monday",'Tuesday','Wednesday',"Thursday","Friday","Saturday"]
+// getday(),getMonth() gives in number instead of words and every other functions are built in functions`
+            date.innerHTML=(today.getDate()<10?"0":"")+today.getDate();
+            day.innerHTML=weeekday[today.getDay()];
+// this toLocaleString() not possible for day as month:"long"--- this wording is not available
+// the ddefault refers to laungages it can be anything 
+
+            mont.innerHTML=today.toLocaleString('default',{month:"long"});
+            year.innerHTML=today.getFullYear();
+            
+
+        </script>
+        
+    </body>
+</html>

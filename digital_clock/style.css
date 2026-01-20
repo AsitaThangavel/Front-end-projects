@@ -1,0 +1,35 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background:linear-gradient(45deg,#e6d9ef,#998097);
+    height:100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    
+}
+.block{
+    background-color: #192a51;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 350px;
+    width: 700px;
+    border-radius: 10px;
+}
+
+.block p{
+    font-size: 120px;
+    color: white;
+    padding: 10px;
+
+}
+.block #text{
+    font-size:60px; 
+}

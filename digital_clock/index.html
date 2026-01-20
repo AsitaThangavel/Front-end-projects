@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Clock</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    
+    <body>
+        
+        <div class="block">
+            <p id="hr">01</p>
+            <p id="min">01</p>
+            <p id="sec">01</p>
+            <p id="text">Am</p>
+
+        </div>
+
+
+        <script>
+            const hr=document.getElementById("hr");
+            const min=document.getElementById("min");
+            const sec=document.getElementById("sec");
+            const text=document.getElementById("text");
+
+
+            setInterval(()=>{
+                const today=new Date();
+                console.log(today);
+                let a=today.getHours()
+                a=a%12;
+                a=a? a:12;
+                hr.innerHTML=a+" :";
+                min.innerHTML=today.getMinutes()+" :";
+                sec.innerHTML=today.getSeconds();
+                text.innerHTML=(today.getHours()>12?'Pm':'Am');
+            },1000);
+            
+            
+        </script>
+    </body>
+
+</html>

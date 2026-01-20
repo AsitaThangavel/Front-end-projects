@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>stp_Watch</title>
+        <style>
+            *{
+                padding: 0%;
+                margin:0%;
+            }
+            body{
+                height: 100vh;
+                width: 100%;
+                background:linear-gradient(to bottom,#212529,#adb5bd);
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+            .back{
+                background-color:rgb(1, 6, 35);
+                height: 250px;
+                width:400px;
+                display: flex;
+                border-radius: 10px;
+                background-position: center;
+                
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                
+                flex-wrap: wrap;
+                font-size: 30px;
+            }
+            .clock{
+                
+                
+                align-items: last baseline;
+                justify-content: center;
+                
+                display: flex;  
+                
+            }
+            .clock img{
+                height: 40px;
+                width: 40px;
+                padding: 20px;
+                border-radius: 50%;
+
+            }
+            .back h1{
+                padding-top: 20px;
+                padding-bottom: 20px;
+                font-size: 50px;
+                font-family:'Courier New', Courier, monospace;
+                color:white;
+            }
+
+
+        </style>
+
+
+    </head>
+    <body>
+        <div class="back">
+            <h1 id="dt">00:00:00</h1>
+            <div class="clock">
+                
+                <img src="./WhatsApp Image 2024-12-08 at 08.17.36_ecdc0239.jpg" alt="pause" onclick="stop()">
+                <img src="./WhatsApp Image 2024-12-08 at 08.17.37_f3a474af.jpg" alt="start" onclick="start()">
+                <img src="./WhatsApp Image 2024-12-08 at 08.17.36_1538303e.jpg" alt="reset" onclick="reset()">
+            </div>
+        </div>
+        <script>
+            let [s,m,h]=[0,0,0];
+            let dt=document.getElementById("dt");
+            let timer=null;
+
+            function watch(){
+                s++;
+                if (s==60){
+                    s=0;
+                    m+=1;
+                    if (m==60){
+                    m=0;
+                    h+=1;
+                    }
+
+                }
+                let h1=h<10?"0"+ h:h;
+                let m1=m<10?"0"+ m:m;
+                let s1=s<10?"0"+ s:s;
+
+
+                dt.innerHTML=h1+":"+m1+":"+s1;
+                
+            }
+            function start(){
+                if (timer!=null){
+                    clearInterval(timer);
+                }
+                timer=setInterval(watch,1000);
+            }
+            function stop(){
+                clearInterval(timer);
+
+            }
+            function reset(){
+                clearInterval(timer);
+                [s,m,h]=[0,0,0];
+                dt.innerHTML="00:00:00";
+            }
+
+
+        </script>
+    </body>
+</html>

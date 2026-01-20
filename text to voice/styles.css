@@ -1,0 +1,77 @@
+
+
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+.outer{
+    width:100%;
+    min-height: 100vh;
+    background:linear-gradient(45deg,#555556,#191719);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#heading{
+    font-size: 45px;
+    font-weight: 500;
+    color: rgb(241, 241, 241);
+    text-decoration:none;
+    margin-top:-50px;
+    margin-bottom: 50px;
+}
+#heading span{
+    color: hotpink;
+}
+
+.outer textarea{
+    height:250px;
+    width: 50%;
+    border-radius: 25px;
+    padding: 15px;
+    font-size: 15px;
+    outline: 0;
+    border: none;
+    resize: none;
+    margin-bottom: 30px;
+}
+
+textarea::placeholder{
+    font-size: larger;
+}
+
+.row{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.outer button{
+    padding: 10px 30px;
+    border-radius: 35px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    height: 40px;
+    color:white;
+    background-color: hotpink;
+}
+
+select{
+    flex:1;
+    color:white;
+    background-color: rgba(255, 105, 180, 0.668);
+    height: 40px;
+    border-radius: 35px;
+    border: 0;
+    outline: 0;
+    padding:0 20px;
+    appearance: none;
+}

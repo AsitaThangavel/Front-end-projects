@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Image gallery</title>
+        <style>
+            *{
+                padding: 0%;
+                margin:0%;
+            }
+            body{
+                background: linear-gradient(to bottom,rgb(14, 49, 73),rgb(74, 136, 143));
+                height: 100vh;
+                width: 100%;
+                display:flex;
+                align-items: center;
+                justify-content: center;   
+            }
+            .back{
+                width: 900px;
+                display: flex;
+                overflow-x: scroll;
+            }
+            .back div{
+                width: 100%;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-gap: 20px;
+                padding: 10px;
+                flex: none;
+            }
+            .back div img{
+                width:100%;
+                height: 500px;
+                filter: grayscale(100%);
+                transition: transform 0.5s;
+
+            }
+            .back::-webkit-scrollbar{
+                display: none;
+            }
+            .gallery{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                margin:10% auto;
+            }
+            #left,#right{
+                height: 40px;
+                width: 40px;
+                margin: 40px;
+                cursor: pointer;
+            }
+            .back div img:hover{
+                filter: grayscale(0);
+                transform: scale(1.1);
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="gallery">
+            <img src="./scroll left.jpg" id="left">
+            <div class="back">
+                <div>
+                    <span><img src="./1.jpg"></span>
+                    <span><img src="./2.jpg"></span>
+                    <span><img src="./3.jpg"></span>
+                    
+                    
+                </div>
+                <div>
+                    <span><img src="./4.jpg"></span>
+                    <span><img src="./5.jpg"></span>
+                    <span><img src="./6.jpg"></span>
+    
+                </div>
+                <div>
+                    <span><img src="./8.jpg"></span>
+                    <span><img src="./9.jpg"></span> 
+                    <span><img src="./7.jpg"></span>
+    
+                </div>
+    
+            </div>
+            <img src="./scroll right.jpg" id="right">
+        </div>
+        <script>
+            let scrcon=document.querySelector(".back");
+            let l=document.getElementById("left");
+            let r=document.getElementById("right");
+// this function is for moving the images with the mouse cursor 
+            // scrcon.addEventListener("wheel",(evt)=>{
+            //     evt.preventDefault();
+            //     scrcon.scrollLeft += evt.deltaY;
+            //     scrcon.style.scrollBehavior="auto";
+
+            // })
+
+            r.addEventListener("click",()=>{
+                scrcon.style.scrollBehavior="smooth";
+                scrcon.scrollLeft+=900;
+
+            })
+            l.addEventListener("click",()=>{
+                scrcon.style.scrollBehavior="smooth";
+                scrcon.scrollLeft-=900;
+                
+            })
+
+        </script>
+        
+
+    </body>
+</html>
