@@ -9,11 +9,10 @@ function generate(){
     if (userinput.value==""){
         alert("Enter Text or URL");
     }else{
-        qrimg.src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+userinput.value;
+        qrimg.src=""+userinput.value;
         
     }
     
 
 }
 
-// https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example
